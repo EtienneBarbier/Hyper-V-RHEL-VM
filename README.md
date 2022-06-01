@@ -96,7 +96,7 @@ Now, you can start your VM. After a few moments, you should have the following w
 
 <img src="images/esm_display.png" alt="ESM Display" width="75%"/>
 
-You can set your display settings and go to **Local Ressources** to modify sound and clipboard settings.
+You can set your display settings and go to **Local Resources** to modify sound and clipboard settings.
 
 <img src="images/esm_local_resources.png" alt="ESM Local Resources" width="75%"/>
 
