@@ -74,10 +74,10 @@ To enable Enhanced Session Mode, you need to install and configure `hyperv-tools
 To do that, you can run the dedicated script provided in the current repository. This script is only for Rhel 8 or Centos 8 OS.
 
 ```bash
-git clone https://github.com/EtienneBarbier/Hyper-V-RHEL-8-VM.git
-cd Hyper-V-RHEL-8-VM
-chmod +x install_configure_esm_el8.sh
-sudo ./install_configure_esm_el8.sh
+git clone https://github.com/EtienneBarbier/Hyper-V-RHEL-VM.git
+cd Hyper-V-RHEL-VM
+chmod +x install_configure_esm_rhel.sh
+sudo ./install_configure_esm_rhel.sh
 ```
 
 Once this script has been executed, you can shut down the VM.
