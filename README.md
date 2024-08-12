@@ -1,4 +1,10 @@
-# RedHat Enterprise Linux 8 VM on Hyper-V with Enhanced Session Mode
+# RedHat Enterprise Linux VM on Hyper-V with Enhanced Session Mode
+
+- RHEL 8
+- RHEL 9
+- Rocky 8
+- Rocky 9
+- Fedora 40 
 
 ## Activate Virtualization in BIOS
 
@@ -48,17 +54,19 @@ You can restart your computer to apply the new configuration.
 A dedicated guide provided by RedHat already exists.
 Just follow the instructions given by this guide.
 
-Please pay attention to `Before you begin` section, point `1` if you want a no-cost Red Hat Developer subscription and the RHEL 8 Binary DVD .iso file.
+The guide is valid for RHEL based distributions and not only RHEL8.
 
-RHEL8 images are available for download on [RedHat Developers Website](https://developers.redhat.com/products/rhel/download)
+**RedHat guide : [RHEL Hyper-V Quick Install](https://developers.redhat.com/rhel8/install-rhel8-hyperv)**
 
-[RedHat no-cost subscription](https://developers.redhat.com/blog/2021/02/10/how-to-activate-your-no-cost-red-hat-enterprise-linux-subscription#)
+Please pay attention to `Before you begin` section, point `1` if you want a no-cost Red Hat Developer subscription and the RHEL Binary DVD .iso file.
 
-**RedHat guide : [RHEL 8 Hyper-V Quick Install](https://developers.redhat.com/rhel8/install-rhel8-hyperv)**
+To have free RedHat developper subscription [RedHat no-cost subscription](https://developers.redhat.com/blog/2021/02/10/how-to-activate-your-no-cost-red-hat-enterprise-linux-subscription#)
 
-You may install `Centos 8` instead of `rhel8`. If is the case, you can follow the same guide and ignore subscription parts.
+RHEL images are available for download on [RedHat Developers Website](https://developers.redhat.com/products/rhel/download)
+Rocky Linux images are available for download on [Rocky Linux Website](https://rockylinux.org/download)
+Fedora images are available for download on [Fedora Website](https://fedoraproject.org/)
 
-Centos 8 images are available for download on [Centos Website](https://www.centos.org/download/)
+You may install `Rocky Linux 8, Rocky Linux 9 or Fedora` instead of `RHEL 8 or RHEL 9`. In this case, you can follow the same guide and ignore subscription parts.
 
 ## Hyper-V Enhanced Session Mode
 
@@ -113,9 +121,11 @@ Note that is not possible to connect with a user already connected in another se
 
 [Enhanced Session Mode from Secana on Github](https://github.com/secana/EnhancedSessionMode)
 
-## Audio
+[XRPD Pipewire module on Github](https://github.com/neutrinolabs/pipewire-module-xrdp)
 
-Audio is not working by default. To be able to have VM audio on the host computer, you need to install xrdp module for pulseaudio.
+## Audio (Only for RHEL 8)
+
+Audio is not working by default for RHEL 8. To be able to have VM audio on the host computer, you need to install xrdp module for pulseaudio.
 
 ### Prerequisites
 
@@ -160,7 +170,7 @@ PULSE_DIR=/var/lib/mock/epel-8-x86_64/root/builddir/build/BUILD/pulseaudio-14.0
 Finally, let's build xrdp source / sink modules. You'll have two .so files module-xrdp-sink.so and module-xrdp-source.so.
 
 ```bash
-make libtool libtool-ltdl-devel pulseaudio-libs-devel git
+sudo dnf install make libtool libtool-ltdl-devel pulseaudio-libs-devel git
 git clone https://github.com/neutrinolabs/pulseaudio-module-xrdp.git
 cd pulseaudio-module-xrdp
 ./bootstrap && ./configure PULSE_DIR=$PULSE_DIR
