@@ -4,7 +4,7 @@
 - RHEL 9
 - Rocky 8
 - Rocky 9
-- Fedora 40 
+- Fedora 40
 
 ## Activate Virtualization in BIOS
 
@@ -79,7 +79,7 @@ Enhanced Session Mode allows:
 
 To enable Enhanced Session Mode, you need to install and configure `hyperv-tools` and `xrdp` on the VM.
 
-To do that, you can run the dedicated script provided in the current repository. This script is only for Rhel 8 or Centos 8 OS.
+To do that, you can run the dedicated script provided in the current repository. This script is only for RHEL based distributions.
 
 ```bash
 git clone https://github.com/EtienneBarbier/Hyper-V-RHEL-VM.git
