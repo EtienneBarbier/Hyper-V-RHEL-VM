@@ -37,6 +37,14 @@ echo $env:Username
 
 Once you know your **Username**, you need to run **Powershell** but as **Administrator** and type de following command by replacing `<USERNAME>` with your **Username**. This will add the user to Hyper-V Administrators group.
 
+For Windows 11 :
+
+```bash
+net localgroup "Hyper-V Administrators" "<USERNAME>" /add
+```
+
+For previous version of Windows :
+
 ```bash
 net localgroup "Hyper-V Administrators" "<USERNAME>"
 ```
